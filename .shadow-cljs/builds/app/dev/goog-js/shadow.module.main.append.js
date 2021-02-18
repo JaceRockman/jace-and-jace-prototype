@@ -1,0 +1,1 @@
+["^ ","~:resource-id",["~:shadow.build.modules/append","~:main"],"~:source","\nshadow.cljs.devtools.client.env.module_loaded('main');\n\nmodular_roleplaying_framework.main.main_BANG_();","~:js","\nshadow.cljs.devtools.client.env.module_loaded('main');\n\nmodular_roleplaying_framework.main.main_BANG_();"]
