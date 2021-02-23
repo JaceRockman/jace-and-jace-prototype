@@ -43,13 +43,14 @@
 
 .overlay-x {
   position: absolute;
-  top: 0;
-  right: 0;
+  top: -60px;
+  right: -60px;
   margin: 1vw;
   color: white;
   background-color: rgb(0, 0, 0, 0.5);
   border: none;
-  font-size: 2em;
+  border-radius: 200px;
+  font-size: 1.5em;
   height: 2em;
   width: 2em;
 }
@@ -350,14 +351,16 @@
 
 .creature-summary-header {
   display: flex;
+  font-size: 2em;
 }
 
 .page .creature-summary-header {
-  font-size: 0.75em;
+  font-size: 1.5em;
 }
 
 .sidebar .creature-summary-header {
-  font-size: 0.5em;
+  font-size: 1em;
+  font-weight: 700;
 }
 
 .stat-details {
@@ -393,6 +396,8 @@
   border-width: 1px;
   border-radius: 1px;
   margin: 0.5vw;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .complex-stats {
@@ -413,8 +418,8 @@
 }
 
 .book .moderate-stats {
-  max-width: 50%;
-  margin-left: 25%;
+  max-width: 48%;
+  margin-left: 26%;
 }
 
 .book .complex-stats {
@@ -463,6 +468,11 @@
 
 .resource-section {
   grid-column: 1 / 3;
+  background: rgb(150, 150, 150);
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
 }
 
 .book .resource-section {
@@ -624,7 +634,11 @@
 
 .creature-notes {
   grid-column: 1 / 3;
-  margin: 0.5vw;
+  background: rgb(150, 150, 150);
+  padding-left: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin-top: 20px;
 }
 
 .creature-notes-header {

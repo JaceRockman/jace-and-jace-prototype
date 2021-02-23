@@ -202,7 +202,7 @@
 
 (defn skills-abilities-details [section-number section-type section-id section-tab section-layout]
   (if (= section-layout "sidebar")
-    [:div "This information is not formatted for the sidebar"]
+    [:div {:style {:color "maroon"}} "The skills and abilities section is not yet formatted to display in the sidebar. Modify your view using the layout controls at the bottom of the page to view the skills and abilities details in the page-style or book-style section."]
     [:div {:class "moderate-stats"}
      [:div {:class "skill-ability-header"}]
      [:div {:class "skill-ability-header"} "Initiation"]
@@ -358,8 +358,9 @@
 
 (defn creature-summary [section-number section-type section-id section-tab section-layout]
   (let [creature-id (<sub [:state-section-item section-number])]
-    [:div {:class "creature-summary-header"}
-     [:div {:style {:font-size "2em"}} (<sub [:creature-title creature-id])]]
+    [:div {:style {:grid-column "1 / 3" :background "rgb(150, 150, 150)" :padding-left "10px" :padding-top "10px"}}
+     [:div {:class "creature-summary-header"}
+      [:div {:style {:color "inherit"}} (<sub [:creature-title creature-id])]]
     ;; (case (<sub [:creature-summary-state creature-id])
     ;;   0 [:div {:class "creature-summary"}
     ;;      [:div {:class "creature-summary-header"}
@@ -378,7 +379,8 @@
     ;;      [:textarea {:class "text-edit"
     ;;                  :value (<sub [:creature-summary creature-id])
     ;;                  :on-change #(>evt [:creature-summary-update creature-id (-> % .-target .-value)])}]])
-    ))
+     [:div {:style {:grid-template-columns "span"}}  (<sub [:creature-summary creature-id])]
+     [:br]]))
 
 
 
@@ -409,27 +411,29 @@
    (skillbility "Charisma" (<sub [:persuasion creature-id]) (<sub [:presence creature-id]) section-layout)])
 
 (defn moderate-stat-block [creature-id section-layout]
-  [:div {:class "moderate-stats"}
-   [:div {:class "skill-ability-header"}]
-   [:div {:class "skill-ability-header"} "Initiation"]
-   [:div {:class "skill-ability-header"} "Reaction"]
-   [:div {:class "skill-ability-header"} "Continuation"]
-   [:div {:class "domain-header"} "Physical"]
-   (skillbility "Coordination" (<sub [:coordination creature-id]) (<sub [:might creature-id]) section-layout)
-   (skillbility "Reflexes" (<sub [:reflexes creature-id]) (<sub [:finesse creature-id]) section-layout)
-   (skillbility "Endurance" (<sub [:endurance creature-id]) (<sub [:fortitude creature-id]) section-layout)
-   [:div {:class "domain-header"} "Spiritual"]
-   (skillbility "Exertion" (<sub [:exertion creature-id]) (<sub [:ambition creature-id]) section-layout)
-   (skillbility "Instinct" (<sub [:instinct creature-id]) (<sub [:discipline creature-id]) section-layout)
-   (skillbility "Perseverance" (<sub [:perseverance creature-id]) (<sub [:dedication creature-id]) section-layout)
-   [:div {:class "domain-header"} "Mental"]
-   (skillbility "Concentration" (<sub [:concentration creature-id]) (<sub [:intellect creature-id]) section-layout)
-   (skillbility "Recognition" (<sub [:recognition creature-id]) (<sub [:intuition creature-id]) section-layout)
-   (skillbility "Comprehension" (<sub [:comprehension creature-id]) (<sub [:stability creature-id]) section-layout)
-   [:div {:class "domain-header"} "Social"]
-   (skillbility "Persuasion" (<sub [:persuasion creature-id]) (<sub [:presence creature-id]) section-layout)
-   (skillbility "Insight" (<sub [:insight creature-id]) (<sub [:wit creature-id]) section-layout)
-   (skillbility "Connections" (<sub [:connections creature-id]) (<sub [:poise creature-id]) section-layout)])
+  (if (= section-layout "sidebar")
+    [:div {:style {:color "maroon" :margin-top "10px" :margin-bottom "10px"}} "The stats section is not yet formatted to display in the sidebar. Modify your view using the layout controls at the bottom of the page to view your stats in the page-style or book-style section."]
+    [:div {:class "moderate-stats"}
+     [:div {:class "skill-ability-header"}]
+     [:div {:class "skill-ability-header"} "Initiation"]
+     [:div {:class "skill-ability-header"} "Reaction"]
+     [:div {:class "skill-ability-header"} "Continuation"]
+     [:div {:class "domain-header"} "Physical"]
+     (skillbility "Coordination" (<sub [:coordination creature-id]) (<sub [:might creature-id]) section-layout)
+     (skillbility "Reflexes" (<sub [:reflexes creature-id]) (<sub [:finesse creature-id]) section-layout)
+     (skillbility "Endurance" (<sub [:endurance creature-id]) (<sub [:fortitude creature-id]) section-layout)
+     [:div {:class "domain-header"} "Spiritual"]
+     (skillbility "Exertion" (<sub [:exertion creature-id]) (<sub [:ambition creature-id]) section-layout)
+     (skillbility "Instinct" (<sub [:instinct creature-id]) (<sub [:discipline creature-id]) section-layout)
+     (skillbility "Perseverance" (<sub [:perseverance creature-id]) (<sub [:dedication creature-id]) section-layout)
+     [:div {:class "domain-header"} "Mental"]
+     (skillbility "Concentration" (<sub [:concentration creature-id]) (<sub [:intellect creature-id]) section-layout)
+     (skillbility "Recognition" (<sub [:recognition creature-id]) (<sub [:intuition creature-id]) section-layout)
+     (skillbility "Comprehension" (<sub [:comprehension creature-id]) (<sub [:stability creature-id]) section-layout)
+     [:div {:class "domain-header"} "Social"]
+     (skillbility "Persuasion" (<sub [:persuasion creature-id]) (<sub [:presence creature-id]) section-layout)
+     (skillbility "Insight" (<sub [:insight creature-id]) (<sub [:wit creature-id]) section-layout)
+     (skillbility "Connections" (<sub [:connections creature-id]) (<sub [:poise creature-id]) section-layout)]))
 
 (defn complex-stat-block [creature-id section-layout]
   (let [sidebar? (= "sidebar" section-layout)]
@@ -614,6 +618,8 @@
                              (>evt [:item-select section-number creature-id])))}
    (<sub [:item-title creature-id])])
 
+(def player-characters [1618 1619 1620 1621])
+
 (defn creature-list [section-number section-type section-id section-tab section-layout]
   (let [active-world (first (filter (fn [section-id] (= "world" (<sub [:section-type section-id]))) (<sub [:state-section-ids])))
         creatures (<sub [:world-creatures active-world])]
@@ -625,6 +631,7 @@
                :on-change (fn [entry] (reset! password-entry (-> entry .-target .-value)))}]
       [:button {:class "unselected-button small"
                 :on-click #(swap! unlocked-creatures conj ((<sub [:unlock-creature @password-entry]) 0))} "Submit"]]
+     (map creature-list-item player-characters (repeat section-number))
      (map creature-list-item (apply vector (distinct @unlocked-creatures)) (repeat section-number))
      (if (= "creature" (<sub [:item-type (<sub [:state-section-item section-number])]))
        (creature-sheet section-number section-type section-id section-tab section-layout))]))
@@ -1004,10 +1011,10 @@
        (if (= "visible" (<sub [:overlay-state]))
          (let [overlay-item (<sub [:overlay-item])]
            [:div {:class "overlay"}
-            [:div {:class "overlay-content"} (overlay-content overlay-item)]
-            [:button {:class "overlay-x"
-                      :on-click #(>evt [:overlay-state-change "hidden"])}
-             "X"]]))
+            [:div {:class "overlay-content"} (overlay-content overlay-item)
+             [:button {:class "overlay-x"
+                       :on-click #(>evt [:overlay-state-change "hidden"])}
+              "X"]]]))
 
      ;; SECTIONS
        (let [section-numbers ["section-one" "section-two" "section-three"]

@@ -290,11 +290,11 @@
 
            1618 {:id 1619
                  :type "creature"
-                 :password "1618"
-                 :title "Aleksander"
+                 :password "Aleks-1618"
+                 :title "Aleks"
                  :heritage "Human"
                  :role "Soldier"
-                 :summary ""
+                 :summary "Aleks has been hardened by a difficult life, but this has forged a firece loyalty to those they consider to be friends. Aleks and Finipher have known one another for many years."
                  :summary-state 0
                  :stats {:physical {:skills [1 3 1]
                                     :abilities [5 3 4]}
@@ -309,14 +309,14 @@
                              1051 1051 1051 1051 1051 1051 1051 1051 1051 1051]
                  :notes ""
                  :notes-state 0
-                 :subtabs [1001 1002 1003 1005]}
+                 :subtabs [1002 1003 1005]}
            1619 {:id 1619
                  :type "creature"
-                 :password "1619"
+                 :password "Gurian-1619"
                  :title "Gurian"
                  :heritage "Dwarf"
                  :role "Paladin"
-                 :summary ""
+                 :summary "Gurian trusts and follows the will of Heilm above all else and has a particular fervor for the virtue of life. Gurian has taken Lewellyn under wing, preserving the doe-eyed innocence of their apparent youth."
                  :summary-state 0
                  :stats {:physical {:skills [1 2 1]
                                     :abilities [3 3 5]}
@@ -332,14 +332,14 @@
                              1051 1051 1051 1051 1051]
                  :notes ""
                  :notes-state 0
-                 :subtabs [1001 1002 1003 1005]}
+                 :subtabs [1002 1003 1005]}
            1620 {:id 1620
                  :type "creature"
-                 :password "1620"
+                 :password "Lewellyn-1620"
                  :title "Lewellyn"
                  :heritage "Elf"
                  :role "Arcanist"
-                 :summary ""
+                 :summary "Lewellyn's curiosity lured them from the comfort of their family's expansive library and into the wondrous and dangerous world outside. They would be dead had it not been for a fortunate encounter with Gurian."
                  :summary-state 0
                  :stats {:physical {:skills [1 2 1]
                                     :abilities [3 3 3]}
@@ -356,14 +356,14 @@
                              1051 1051 1051 1051 1051]
                  :notes ""
                  :notes-state 0
-                 :subtabs [1001 1002 1003 1005]}
+                 :subtabs [1002 1003 1005]}
            1621 {:id 1621
                  :type "creature"
-                 :password "1621"
+                 :password "Finipher-1621"
                  :title "Finipher"
                  :heritage "Halfling"
                  :role "Rogue"
-                 :summary ""
+                 :summary "Finipher has been running their whole life. Whether that be in the direction of wealth and riches or away from trouble. Aleks is one of the few people that Finipher feels they can truly rely on."
                  :summary-state 0
                  :stats {:physical {:skills [1 4 1]
                                     :abilities [3 3 3]}
@@ -381,7 +381,7 @@
                              1051 1051 1051 1051 1051]
                  :notes ""
                  :notes-state 0
-                 :subtabs [1001 1002 1003 1005]}
+                 :subtabs [1002 1003 1005]}
 
            ;;;;;;;;;;;;;;;
            ;; Resources ;;
