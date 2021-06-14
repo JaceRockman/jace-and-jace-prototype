@@ -160,7 +160,7 @@
               :icon "fas fa-tint"
               :title "Conditions"
               :template views/conditions-list
-              :items [50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68]}
+              :items [47 48 49 62 63 64 65 66 67 68]}
           17 {:id 17
               :icon "fas fa-running"
               :title "Skills & Abilities"
@@ -1107,6 +1107,25 @@ When dice penalties are inflicted upon a dice pool, you decrease the number of d
                :type "skillbility"
                :title "Connections"
                :details "Connections represents how many relationships and affiliations your character has, how deep those connections run, and how good they are at calling upon those connections for favors. A creature with high connections always knows a guy who knows a guy whether that is through a membership in a group, a trade deal they made years ago, or simply a friend they met throughout their journeys."}
+
+           47 {:id 47
+               :type "condition"
+               :title "Wounded"
+               :description "As a result of the injuries you have accumulated, your performance in a particular domain has diminished."
+               :effects {1 {:description "While wounded, a -1d penalty is applied to all checks made in the domain you are wounded in."
+                            :duration "This condition lasts until the total injuries in the relevant domain are equal to or lower than the threshold determined by that domain's health check."}}}
+           48 {:id 48
+               :type "condition"
+               :title "Incapacitated"
+               :description "You have accumulated enough injuries that your character is no longer in control of their body, mind, spirit, or reputation."
+               :effects {1 {:description "When this condition is inflicted in the physical, spiritual, or mental domain, your character becomes unconscious, despondent, or unstable, respectively. You have no control over your character in any of these circumstances. In the case of social incapacitation, people may avoid associating with you or may ignore you completely."
+                            :duration "Whenever your wounds heal, make a health check where the target number is your new damage total. If you succeed, then this condition is removed."}}}
+           49 {:id 49
+               :type "condition"
+               :title "Dead"
+               :description "You have accumulated more injuries than your body, mind, spirit, or reputation can handle."
+               :effects {1 {:description "When this condition is inflicted in the physical, spiritual, or mental domain, the injuries accumulated in those domains no longer heal naturally over time. In the case of the social domain, your relationships with specific individuals or groups may be permanently severed and trying to interact with them may cause them to become hostile."
+                            :duration "Unless a certain circumstance, process, or item says otherwise, this condition is permanent."}}}
 
            50 {:id 50
                :type "condition"
