@@ -605,7 +605,7 @@
                              (>evt [:item-select section-number creature-id])))}
    (<sub [:item-title creature-id])])
 
-(def player-characters [1618 1619 1620 1621])
+(def player-characters [])
 
 (defn creature-list [section-number section-type section-id section-tab section-layout]
   (let [active-world (first (filter (fn [section-id] (= "world" (<sub [:section-type section-id]))) (<sub [:state-section-ids])))

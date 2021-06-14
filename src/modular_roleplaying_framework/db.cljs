@@ -288,9 +288,9 @@
            ;; Characters ;;
            ;;;;;;;;;;;;;;;;
 
-           1618 {:id 1619
+           1618 {:id 1618
                  :type "creature"
-                 :password "Aleks-1618"
+                 :password "Loyalty"
                  :title "Aleks"
                  :heritage "Human"
                  :role "Soldier"
@@ -312,7 +312,7 @@
                  :subtabs [1002 1003 1005]}
            1619 {:id 1619
                  :type "creature"
-                 :password "Gurian-1619"
+                 :password "Heilm"
                  :title "Gurian"
                  :heritage "Dwarf"
                  :role "Paladin"
@@ -335,7 +335,7 @@
                  :subtabs [1002 1003 1005]}
            1620 {:id 1620
                  :type "creature"
-                 :password "Lewellyn-1620"
+                 :password "Forgotten Magic"
                  :title "Lewellyn"
                  :heritage "Elf"
                  :role "Arcanist"
@@ -359,7 +359,7 @@
                  :subtabs [1002 1003 1005]}
            1621 {:id 1621
                  :type "creature"
-                 :password "Finipher-1621"
+                 :password "Money"
                  :title "Finipher"
                  :heritage "Halfling"
                  :role "Rogue"
