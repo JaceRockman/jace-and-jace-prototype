@@ -992,6 +992,11 @@
 ;; These are all for subscribing to and formatting rules data
 
 (rf/reg-sub
+ :prototype-text
+ (fn [db [_ item-id keyword]]
+   (get-in db [:items item-id :text keyword])))
+
+(rf/reg-sub
  :overview
  (fn [db [_ item-id]]
    (get-in db [:items item-id :text :overview])))

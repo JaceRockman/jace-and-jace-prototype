@@ -233,22 +233,23 @@
                 "standard-text")]
     [:div
      [:div {:style {:font-size "20pt"}} "Overview"]
-     [:div {:class style} (<sub [:overview item])]
+     [:div {:class style} (<sub [:prototype-text item :overview])]
      [:br]
      [:div {:style {:font-size "20pt"}} "Base Dice Pool"]
-     [:div {:class style} (<sub [:base-dice-pool item skillbilities? skills])]
-     [:br]
-     [:div {:style {:font-size "20pt"}} "Passive Checks"]
-     [:div {:class style} (<sub [:passive-checks item])]
+     [:div {:class style} (<sub [:prototype-text item :base-dice-pool])]
      [:br]
      [:div {:style {:font-size "20pt"}} "Bonuses & Penalties"]
-     [:div {:class style} (<sub [:bonuses-and-penalties item])]
+     [:div {:class style} (<sub [:prototype-text item :bonuses-and-penalties])]
      [:br]
-     (if (= true splintering) [:div {:style {:font-size "20pt"}} "Multiple Actions"])
-     (if (= true splintering) [:div {:class style} (<sub [:splintering item])])
+     [:div {:style {:font-size "20pt"}} "Splintering"]
+     [:div {:class style} (<sub [:prototype-text item :splintering])]
      [:br]
-     (if (= true caution) [:div {:style {:font-size "20pt"}} "Careful & Reckless Action"])
-     (if (= true caution) [:div {:class style} (<sub [:caution item])])]))
+     [:div {:style {:font-size "20pt"}} "Combining & Splitting"]
+     [:div {:class style} (<sub [:prototype-text item :combining-and-splitting])]
+     [:br]
+     [:div {:style {:font-size "20pt"}} "Passive Checks"]
+     [:div {:class style} (<sub [:prototype-text item :passive])]
+     [:br]]))
 
 (defn resources [section-number section-type section-id section-tab section-layout]
   (let [item ((<sub [:tab-items section-tab]) 0)
@@ -268,56 +269,42 @@
                 "standard-text")]
     [:div
      [:div {:style {:font-size "20pt"}} "Overview"]
-     [:div {:class style} (<sub [:overview item])]
+     [:div {:class style} (<sub [:prototype-text item :overview])]
      [:br]
      [:div {:style {:font-size "20pt"}} "Rounds"]
-     [:div {:class style} (<sub [:rounds item])]
+     [:div {:class style} (<sub [:prototype-text item :rounds])]
      [:br]
      [:div {:style {:font-size "20pt"}} "Moments"]
-     [:div {:class style} (<sub [:moments item])]
+     [:div {:class style} (<sub [:prototype-text item :moments])]
      [:br]
      [:div {:style {:font-size "20pt"}} "Actions"]
-     [:div {:class style} (<sub [:actions item])]
+     [:div {:class style} (<sub [:prototype-text item :actions])]
      [:div {:class "actions-list"}
       [:div {:class "action-section"}
        [:div {:class "header"} (str "Setup Actions")]
-       (map divify ["- Release a Trap"
-                    "- Duck Behind Cover"
+       (map divify ["- Duck Behind Cover"
                     "- Fall Prone"
-                    "- Walk"
-                    "- Crawl"
                     "- Stand Up"
-                    "- Encourage"
-                    "- Corroborate"
-                    "- Focus "])]
+                    "- Walk"
+                    "- Focus"])]
       [:div {:class "action-section"}
        [:div {:class "header"} (str "Engagement Actions")]
        [:div {:style {:font-size "1.5em"}} "Initiations"]
        (map divify ["- Cast a spell"
-                    "- Fire a weapon"
-                    "- Strike at an opponent"
+                    "- Attack with a weapon"
                     "- Grapple"
                     "- Disarm"
                     "- Climb"
                     "- Swim"
                     "- Jump"
                     "- Hide"
-                    "- Provide First Aid"
-                    "- Interrogate"
-                    "- Deceive"
-                    "- Befriend"
-                    "- Inspire"])
+                    "- Provide First Aid"])
        [:div {:style {:font-size "1.5em"}} "Reactions"]
        (map divify ["- Block"
                     "- Parry"
                     "- Counterspell"
                     "- Guard mind"
-                    "- Deflect"
-                    "- Evade"])]]
-     [:br]
-    ;;  [:div {:class style} (<sub [:moments item encounter-style splintering caution])]
-    ;;  [:div {:class style} (<sub [:rounds item encounter-style])]
-     ]))
+                    "- Evade"])]]]))
 
 (defn damage-and-recovery [section-number section-type section-id section-tab section-layout]
   (let [item ((<sub [:tab-items section-tab]) 0)
@@ -327,16 +314,16 @@
                 "standard-text")]
     [:div
      [:div {:style {:font-size "20pt"}} "Overview"]
-     [:div {:class style} (<sub [:overview item])]
+     [:div {:class style} (<sub [:prototype-text item :overview])]
      [:br]
      [:div {:style {:font-size "20pt"}} "Injuries"]
-     [:div {:class style} (<sub [:injuries item (count damage-tiers) recovery-tiers?])]
+     [:div {:class style} (<sub [:prototype-text item :injuries])]
      [:br]
      [:div {:style {:font-size "20pt"}} "Conditions"]
-     [:div {:class style} (<sub [:conditions item condition-style skills abilities skillbilities?])]
+     [:div {:class style} (<sub [:prototype-text item :conditions])]
      [:br]
      [:div {:style {:font-size "20pt"}} "Recovery"]
-     [:div {:class style} (<sub [:recovery item (count damage-tiers) recovery-tiers? recovery-times treatment? skills abilities skillbilities?])]
+     [:div {:class style} (<sub [:prototype-text item :recovery])]
      [:br]]))
 
 (defn condition [condition]
