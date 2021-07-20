@@ -758,7 +758,7 @@
  :implement
  (fn [db [_ properties]]
    {:title "Modal Tool"
-    :description "These arcane gauntlets have two modes stored: the melee mode and the ranged mode. While in melee mode, the left gauntlet produces a shield of solid aethereal force with stats equivalent to a kite shield while the right gauntlet produces a sharp aethereal blade with stats equivalent to a longsword. While in ranged mode, the two gauntlets function together as a bow with stats equivalent to a longbow. Changing from one mode to the other requires a setup action. Gain +Quality +Power on attacks with the Arcane Gauntlets as well as +Quality from your Aethereal Knowledge."}))
+    :description "These arcane gauntlets have two modes stored: the melee mode and the ranged mode. While in melee mode, the left gauntlet produces a shield of solid aethereal force with capabilities and restrictions equivalent to a kite shield while the right gauntlet produces a sharp aethereal blade with capabilities and restrictions equivalent to a longsword. While in ranged mode, the two gauntlets function together as a bow with capabilities and restrictions equivalent to a longbow. Changing from one mode to the other requires a setup action. Gain +Quality +Power on attacks with the Arcane Gauntlets as well as +Quality from your Aethereal Knowledge."}))
 
 (rf/reg-sub
  :weapon-attack
