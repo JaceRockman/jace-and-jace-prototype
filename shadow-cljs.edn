@@ -1,0 +1,14 @@
+{:dependencies
+ [[reagent "0.10.0"]
+  [re-frame "0.12.0"]
+  [kee-frame "0.3.4"]]
+
+ :source-paths ["src"]
+
+ :dev-http {8080 "html/"}
+
+ :builds {:app {:target :browser
+                :output-dir "html/js"
+                :asset-path "/js"
+                :modules {:main {:init-fn modular-roleplaying-framework.main/main!}}
+                :devtools {:after-load modular-roleplaying-framework.main/main!}}}}
