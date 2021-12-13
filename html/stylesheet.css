@@ -163,7 +163,7 @@
 .sidebar {
   overflow: auto;
   display: grid;
-  background: rgb(121, 121, 121);
+  background: rgb(201, 201, 201);
   border: 1px;
   border-style: solid;
 }

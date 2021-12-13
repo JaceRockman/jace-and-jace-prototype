@@ -505,14 +505,14 @@
 (defn capitalize-words
   "Capitalize every word in a string"
   [s]
-  (->> (string/split (str s) #"\b")
-       (map string/capitalize)
-       string/join))
+  (->> (s/split (str s) #"\b")
+       (map s/capitalize)
+       s/join))
 
 (defn domain-resource-subsection [section-number subsection-id]
   (let [creature-id (<sub [:state-section-item section-number])]
     [:div
-     [:div {:class "subheader" :style {:text-align "left"}} (clojure.string/capitalize-words (subsection-titles subsection-id))]
+     [:div {:class "subheader" :style {:text-align "left"}} (capitalize-words (subsection-titles subsection-id))]
      [:div {:class "domain-resource-list"}
       (map resource-divify (<sub [:creature-resources-typed-quantified creature-id subsection-id]) (repeat creature-id))
       ;; [:button {:class "add-resource"
@@ -523,7 +523,7 @@
 (defn miscellaneous-resource-subsection [section-number subsection-id]
   (let [creature-id (<sub [:state-section-item section-number])]
     [:div
-     [:div {:class "subheader" :style {:text-align "left"}} (clojure.string/capitalize-words (subsection-titles subsection-id))]
+     [:div {:class "subheader" :style {:text-align "left"}} (capitalize-words (subsection-titles subsection-id))]
      [:div {:class "miscellaneous-resource-list"}
       (map resource-divify (<sub [:creature-resources-typed-quantified creature-id subsection-id]) (repeat creature-id))
       ;; [:button {:class "add-resource"
