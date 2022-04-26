@@ -6,11 +6,11 @@ goog.require('modular_roleplaying_framework.views');
  * Convert newlines to [:br]'s.
  */
 modular_roleplaying_framework.db.text__GT_hiccup = (function modular_roleplaying_framework$db$text__GT_hiccup(text){
-return cljs.core.map.cljs$core$IFn$_invoke$arity$2((function (p1__28951_SHARP_){
-if(typeof p1__28951_SHARP_ === 'string'){
-return p1__28951_SHARP_;
+return cljs.core.map.cljs$core$IFn$_invoke$arity$2((function (p1__29323_SHARP_){
+if(typeof p1__29323_SHARP_ === 'string'){
+return p1__29323_SHARP_;
 } else {
-return cljs.core.with_meta(p1__28951_SHARP_,new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"key","key",-1516042587),cljs.core.gensym.cljs$core$IFn$_invoke$arity$1("br-")], null));
+return cljs.core.with_meta(p1__29323_SHARP_,new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"key","key",-1516042587),cljs.core.gensym.cljs$core$IFn$_invoke$arity$1("br-")], null));
 }
 }),cljs.core.interpose.cljs$core$IFn$_invoke$arity$2(new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"br","br",934104792)], null),clojure.string.split.cljs$core$IFn$_invoke$arity$2(text,"\n")));
 });

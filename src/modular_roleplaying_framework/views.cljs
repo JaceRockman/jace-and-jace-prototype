@@ -174,7 +174,7 @@
   (let [items (<sub [:tab-items section-tab])]
     [:div {:class "body"} (<sub [:item-text (items 0)])]))
 
-(defn list-item [item section-number section-tab]
+(defn list-item [item section-number]
   [:button {:class "body"
             :style (if (= (<sub [:state-section-item section-number]) item)
                      {:background "black"
@@ -594,12 +594,12 @@
 
 
 (def unlocked-creatures
-  (r/atom []))
+  (r/atom [1618 1619 1620 1621]))
 
 (def password-entry
   (r/atom ""))
 
-(defn creature-list-item [creature-id section-number section-tab]
+(defn creature-list-item [creature-id section-number]
   [:button {:class (if (= (<sub [:state-section-item section-number]) creature-id)
                      (str "selected-button")
                      (str "unselected-button"))
@@ -618,13 +618,13 @@
   (let [active-world (first (filter (fn [section-id] (= "world" (<sub [:section-type section-id]))) (<sub [:state-section-ids])))
         creatures (<sub [:world-creatures active-world])]
     [:div {:style {:display "block"}}
-     [:div
-      [:div "Enter Creature Password"]
-      [:input {:type "text"
-               :value @password-entry
-               :on-change (fn [entry] (reset! password-entry (-> entry .-target .-value)))}]
-      [:button {:class "unselected-button small"
-                :on-click #(swap! unlocked-creatures conj ((<sub [:unlock-creature @password-entry]) 0))} "Submit"]]
+    ;;  [:div
+      ;; [:div "Enter Creature Password"]
+      ;; [:input {:type "text"
+      ;;          :value @password-entry
+      ;;          :on-change (fn [entry] (reset! password-entry (-> entry .-target .-value)))}]
+      ;; [:button {:class "unselected-button small"
+      ;;           :on-click #(swap! unlocked-creatures conj ((<sub [:unlock-creature @password-entry]) 0))} "Submit"]]
      (map creature-list-item player-characters (repeat section-number))
      (map creature-list-item (apply vector (distinct @unlocked-creatures)) (repeat section-number))
      (if (= "creature" (<sub [:item-type (<sub [:state-section-item section-number])]))
